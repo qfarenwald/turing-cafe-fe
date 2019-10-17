@@ -21,10 +21,10 @@ class Form extends Component {
   submitRes = event => {
     event.preventDefault();
     const newRes  = {
-      name: "hello",
-      date: "hello",
-      time: "hello",
-      number: "hello"
+      name: this.state.name,
+      date: this.state.date,
+      time: this.state.time,
+      number: this.state.number
     }
     this.props.addRes(newRes)
     this.clearInputs()
