@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ResCont from '../ResCont/ResCont';
 import './App.css';
 
 class App extends Component {
@@ -27,7 +28,7 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-
+        <ResCont reservations={this.state.reservations}/>
         </div>
       </div>
     )
