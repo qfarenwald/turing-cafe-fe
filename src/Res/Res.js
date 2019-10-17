@@ -4,6 +4,11 @@ import './Res.css';
 const Res = ({ key, id, name, date, time, number }) => {
   return (
     <section>
+      <h3>{name}</h3>
+      <p>{date}</p>
+      <p>{time}</p>
+      <p>{number}</p>
+      <button>Cancel</button>
     </section>
   )
 }
