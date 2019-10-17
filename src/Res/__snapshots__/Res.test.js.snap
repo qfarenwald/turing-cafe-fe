@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Res should match snapshot 1`] = `
+<section>
+  <h3>
+    Quinne
+  </h3>
+  <p>
+    12/29
+  </p>
+  <p>
+    7:00
+  </p>
+  <p>
+    4
+  </p>
+  <button>
+    Cancel
+  </button>
+</section>
+`;
