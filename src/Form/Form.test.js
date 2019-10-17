@@ -44,4 +44,23 @@ describe('Form', () => {
 
     expect(wrapper.state('name')).toEqual(nameExpected);
   })
+
+  it('should run submitRes on click', () => {
+    const mockAddRes = jest.fn();
+
+    const mockEvent = {
+      preventDefault: jest.fn()
+    }
+
+    const mockSubmitRes = jest.fn();
+
+    let wrapper = shallow(<Form
+      addRes={mockAddRes}
+      />);
+
+    wrapper.find('button').simulate('click');
+
+    expect(mockSubmitRes).toHaveBeenCalledWith(mockEvent);
+
+  })
 })
