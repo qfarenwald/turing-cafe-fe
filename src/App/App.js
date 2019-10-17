@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResCont from '../ResCont/ResCont';
+import Form from '../Form/Form';
 import './App.css';
 
 class App extends Component {
@@ -25,10 +26,10 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-
+          <Form />
         </div>
         <div className='resy-container'>
-        <ResCont reservations={this.state.reservations}/>
+          <ResCont reservations={this.state.reservations}/>
         </div>
       </div>
     )
