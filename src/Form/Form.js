@@ -12,11 +12,66 @@ class Form extends Component {
     }
   }
 
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  submitRes = event => {
+    event.preventDefault();
+    const newRes  = {
+      name: "hello",
+      date: "hello",
+      time: "hello",
+      number: "hello"
+    }
+    this.props.addRes(newRes)
+    this.clearInputs()
+  }
+
+  clearInputs = () => {
+    this.setState({
+      name: "",
+      date: "",
+      time: "",
+      number: ""
+    })
+  }
+
   render() {
     return (
       <form>
-
-      </form>  
+        <input
+          type='text'
+          name='name'
+          placeholder='Name'
+          value={this.state.name}
+          onChange={event => this.handleChange(event)}
+        />
+        <input
+          type='text'
+          name='date'
+          placeholder='Date (mm/dd)'
+          value={this.state.date}
+          onChange={event => this.handleChange(event)}
+        />
+        <input
+          type='text'
+          name='time'
+          placeholder='Time'
+          value={this.state.time}
+          onChange={event => this.handleChange(event)}
+        />
+        <input
+          type='number'
+          name='guests'
+          placeholder='Number of guests'
+          value={this.state.number}
+          onChange={event => this.handleChange(event)}
+        />
+        <button onClick={event => this.submitRes(event)}>Make Reservation</button>
+      </form>
     )
   }
 }
