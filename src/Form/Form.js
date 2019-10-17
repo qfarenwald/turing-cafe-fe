@@ -21,6 +21,7 @@ class Form extends Component {
   submitRes = event => {
     event.preventDefault();
     const newRes  = {
+      id: Date.now(),
       name: this.state.name,
       date: this.state.date,
       time: this.state.time,

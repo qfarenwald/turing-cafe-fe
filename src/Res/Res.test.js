@@ -12,7 +12,7 @@ describe('Res', () => {
       date="12/29"
       time="7:00"
       number={4}
-      />)
+      />);
 
     expect(wrapper).toMatchSnapshot();
   })
