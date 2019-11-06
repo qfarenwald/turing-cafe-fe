@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Form.css';
+import { connect } from 'react-redux';
+import { addRes } from '../actions';
+import { fetchData } from '../utils/apiCalls';
 
 class Form extends Component {
   constructor() {
@@ -19,6 +22,7 @@ class Form extends Component {
   }
 
   submitRes = event => {
+    const { addRes } = this.props;
     event.preventDefault();
     const newRes  = {
       id: Date.now(),
@@ -27,7 +31,8 @@ class Form extends Component {
       time: this.state.time,
       number: this.state.number
     }
-    this.props.addRes(newRes)
+    fetchData(newRes)
+    addRes(newRes)
     this.clearInputs()
   }
 
@@ -77,4 +82,8 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export const mapDispatchToProps = dispatch => ({
+  addRes: newRes => dispatch(addRes(newRes))
+})
+
+export default connect(null, mapDispatchToProps)(Form);
