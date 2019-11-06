@@ -22,28 +22,12 @@ class App extends Component {
       .catch(error => console.log(error))
   }
 
-  addRes = newRes => {
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(newRes),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-    fetch('http://localhost:3001/api/v1/reservations', options)
-      .then(res => res.json())
-      .then(data => this.setState({
-        reservations: [...this.state.reservations, newRes]
-      }))
-      .catch(error => console.log(error))
-  }
-
   render() {
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form addRes={this.addRes}/>
+          <Form />
         </div>
         <div className='resy-container'>
           <ResCont reservations={this.state.reservations}/>
